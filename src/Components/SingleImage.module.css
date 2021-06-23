@@ -1,0 +1,10 @@
+.single-image{
+    max-width:300px;
+    max-height: 300px;
+}
+
+@media screen and (min-width:900px){
+   /*  .single-image{
+        width: 20%;
+    } */
+}
