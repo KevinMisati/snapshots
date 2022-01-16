@@ -1,16 +1,26 @@
-import React,{useEffect} from 'react'
+import React from 'react'
 import classes from "./Categories.module.css"
 
-const Categories = ({ getCategoryQuery }) => {
-    
-    
+const Categories = ({getCategoryQuery}) => {
+    const handleClick =(e) => {
+        e.preventDefault()
+        getCategoryQuery(e.target.value)
+    }
     return (
         <>
             <ul className={classes["category-list"]}>
-                <li><button onClick={() =>{getCategoryQuery("Mountains")}}>Mountains</button></li>
-                <li><button onClick={() =>{getCategoryQuery("Beaches")}}>Beaches</button></li>
-                <li><button onClick={() =>{getCategoryQuery("Birds")}}>Birds</button></li>
-                <li><button onClick={() =>{getCategoryQuery("Food")}}>Food</button></li>
+                <li>
+                    <button value="Mountains" onClick={handleClick}>Mountains</button>
+                </li>
+                <li>
+                    <button value="Lakes"  onClick={handleClick}>Lakes</button>
+                </li>
+                <li>
+                    <button value="Birds"  onClick={handleClick}>Birds</button>
+                </li>
+                <li>
+                    <button value="Forests" onClick={handleClick}>Food</button>
+                </li>
             </ul>
         </>
     )
