@@ -17,7 +17,7 @@ const SnapForm = ({ getCategoryQuery }) => {
     return (
         <>
             <form  onSubmit={handleSubmit} className={classes.form}>
-            <input placeholder="food" onChange={handleInputChange} value={userInput} type="text" />
+            <input onChange={handleInputChange} value={userInput} type="text" />
             <button >
                     <SearchIcon />
                    

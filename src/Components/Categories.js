@@ -19,7 +19,7 @@ const Categories = ({getCategoryQuery}) => {
                     <button value="Birds"  onClick={handleClick}>Birds</button>
                 </li>
                 <li>
-                    <button value="Forests" onClick={handleClick}>Food</button>
+                    <button value="Forests" onClick={handleClick}>Forests</button>
                 </li>
             </ul>
         </>
