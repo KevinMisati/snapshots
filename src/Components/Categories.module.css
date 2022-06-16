@@ -7,7 +7,7 @@
    
 }
  .category-list button{
-    background-color: lightblue;
+    background-color: var(--clr-btn1);
     margin: 1rem ; 
     padding: .5rem 1rem;
     border: 0;
@@ -16,6 +16,9 @@
     cursor: pointer;
     font-size: 1.2rem;
 } 
+.category-list button:hover{
+    background-color: var(--clr-btn2);
+}
 @media screen and (min-width:780px){
     .category-list{
         flex-direction: row;

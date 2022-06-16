@@ -10,7 +10,7 @@ const DisplayImages = ({query,imgs,isLoading}) => {
             {isLoading && <h4>Loading...</h4>}
             <div className={classes.images}>
                 {imgs.map((image) => {
-                    return <SingleImage image={image} />
+                    return <SingleImage image={image.src.large} />
                 }) } 
                  
             </div>

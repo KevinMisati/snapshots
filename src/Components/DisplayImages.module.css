@@ -6,6 +6,9 @@
     max-width: 1360px;
     overflow: hidden;
 }
+.images-container h2{
+    text-transform: capitalize;
+}
 .images {
     margin: 2rem;
     display:flex;
@@ -19,4 +22,5 @@
 .images img {
     width: 100%;
     height: 100%;
+    margin: .75rem;
 }
