@@ -22,15 +22,18 @@ function App () {
     setPage(prev => prev + 1)
   }
 const perPage = 32
-
+//auth -  
+//rap - 
 const pexelsKey = process.env.REACT_APP_PEXELS_KEY
+console.log(pexelsKey,"pexels")
 const rapidKey = process.env.REACT_APP_RAPID_KEY
+console.log(rapidKey,"rapid")
 
 const options = {
 	method: 'GET',
 	headers: {
-		Authorization: pexelsKey,
-		'X-RapidAPI-Key': rapidKey,
+		Authorization:"563492ad6f917000010000019674aa0fd7744dc4ab17a2cf568a1d16",
+		'X-RapidAPI-Key':"1dd4d52b8fmsh21ff7141d5a5affp19fc01jsn2865e02b10c4",
 		'X-RapidAPI-Host': 'PexelsdimasV1.p.rapidapi.com'
 	}
 };
@@ -39,7 +42,7 @@ useEffect(() => {
 fetch(`https://pexelsdimasv1.p.rapidapi.com/v1/search?query=${query}&locale=en-US&per_page=${perPage}&page=${page}`, options)
 	.then(response => response.json())
 	.then(response => {
-    //console.log(response.photos)
+    console.log(response.photos)
     if(page > 1){
       setImages((prev) => [...prev,...response.photos])
     }
@@ -60,7 +63,7 @@ fetch(`https://pexelsdimasv1.p.rapidapi.com/v1/search?query=${query}&locale=en-U
       <Header />
       <SnapForm getCategoryQuery={getCategoryQuery} />
       <Categories getCategoryQuery={getCategoryQuery} />
-      <DispalyImages addPage={addPage} isLoading={loading} query={query} imgs={images}   />
+      <DispalyImages addPage={addPage} isLoading={loading} query={query} imgs={images}   /> 
       <div className='top'>
         <a href="#top">
             <i class="fa-solid fa-angle-up fa-lg"></i>
