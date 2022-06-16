@@ -1,4 +1,3 @@
-import React,{useState} from 'react'
 import classes from "./DisplayImages.module.css"
 import SingleImage from "./SingleImage"
 
