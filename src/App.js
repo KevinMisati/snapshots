@@ -14,6 +14,7 @@ function App () {
  
   const getCategoryQuery = (categoryQuery) => {
     setQuery(categoryQuery)
+    setPage(1)
   }
   
   const addPage = () => {
