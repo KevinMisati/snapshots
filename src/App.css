@@ -2,6 +2,9 @@
   text-align: center;
   position: relative;
 }
+/* .App *{
+  border: 1px solid red;
+} */
 .top{
   position: fixed;
   bottom: 5%;
@@ -14,4 +17,7 @@
   background-color: var(--clr-btn1);
   border: none;
   box-shadow:none;
+}
+.top i:hover{
+  background-color: var(--clr-btn2);
 }
