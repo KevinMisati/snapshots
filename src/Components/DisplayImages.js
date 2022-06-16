@@ -2,7 +2,7 @@ import React,{useContext} from 'react'
 import classes from "./DisplayImages.module.css"
 import SingleImage from "./SingleImage"
 
-const DisplayImages = ({query,imgs,isLoading}) => {
+const DisplayImages = ({query,imgs,isLoading,addPage}) => {
 
     return (
         <div className={classes["images-container"]}>
@@ -14,7 +14,11 @@ const DisplayImages = ({query,imgs,isLoading}) => {
                 }) } 
                 
             </div>
-            
+
+            <div className={classes['load-more']}>
+                <button onClick= {() => addPage()}>Load more photos</button>
+            </div>
+
         </div>
     )
 }

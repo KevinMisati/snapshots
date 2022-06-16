@@ -1,10 +1,10 @@
 .images-container{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     max-width: 1360px;
-    overflow: hidden;
+    overflow: hidden; */
 }
 .images-container h2{
     text-transform: capitalize;
@@ -23,4 +23,20 @@
     width: 100%;
     height: 100%;
     margin: .75rem;
+}
+.load-more button{
+    background-color: var(--clr-btn1);
+    border: 1px solid var(--clr-btn1);
+    outline: none;
+    margin: 2rem;
+    padding: .5rem .75rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+@media screen and (max-width:567px){
+    .load-more button{
+    margin: 2rem;
+    padding: .35rem .5rem;
+    font-size: 1rem;
+}
 }

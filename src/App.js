@@ -10,18 +10,19 @@ function App () {
   const [query,setQuery] = useState("food")
   const [images,setImages] = useState([])
   const [loading,setLoading] = useState(false)
+  const [page,setPage] = useState(1)
  
   const getCategoryQuery = (categoryQuery) => {
     setQuery(categoryQuery)
   }
   
-
-const page = 1
+  const addPage = () => {
+    console.log("hello world")
+    setPage(prev => prev + 1)
+  }
 const perPage = 32
 
-
-useEffect(() => {
-  const options = {
+const options = {
 	method: 'GET',
 	headers: {
 		Authorization: '563492ad6f917000010000019674aa0fd7744dc4ab17a2cf568a1d16',
@@ -29,15 +30,22 @@ useEffect(() => {
 		'X-RapidAPI-Host': 'PexelsdimasV1.p.rapidapi.com'
 	}
 };
-
-fetch(`https://pexelsdimasv1.p.rapidapi.com/v1/search?query=${query}&locale=en-US&per_page=${perPage}&page=1${page}`, options)
+useEffect(() => {
+fetch(`https://pexelsdimasv1.p.rapidapi.com/v1/search?query=${query}&locale=en-US&per_page=${perPage}&page=${page}`, options)
 	.then(response => response.json())
 	.then(response => {
-    console.log(response.photos)
-    setImages(response.photos)
+    //console.log(response.photos)
+    if(page > 1){
+      setImages((prev) => [...prev,...response.photos])
+    }
+    else{
+      setImages(response.photos)
+    }
+    
   })
 	.catch(err => console.error(err));
-},[query]) 
+},[query,page]) 
+
 
   
   return (
@@ -46,7 +54,7 @@ fetch(`https://pexelsdimasv1.p.rapidapi.com/v1/search?query=${query}&locale=en-U
       <Header />
       <SnapForm getCategoryQuery={getCategoryQuery} />
       <Categories getCategoryQuery={getCategoryQuery} />
-      <DispalyImages isLoading={loading} query={query} imgs={images}   />
+      <DispalyImages addPage={addPage} isLoading={loading} query={query} imgs={images}   />
       <div className='top'>
         <a href="#top">
             <i class="fa-solid fa-angle-up fa-lg"></i>
