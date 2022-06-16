@@ -39,6 +39,9 @@
     background-color: var(--clr-btn2);
     border: 1px solid var(--clr-btn2);
 }
+.loading{
+    margin: 1rem;
+}
 @media screen and (max-width:567px){
     .load-more button{
     margin: 2rem;

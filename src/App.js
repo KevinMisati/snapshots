@@ -31,6 +31,7 @@ const options = {
 	}
 };
 useEffect(() => {
+  setLoading(true)
 fetch(`https://pexelsdimasv1.p.rapidapi.com/v1/search?query=${query}&locale=en-US&per_page=${perPage}&page=${page}`, options)
 	.then(response => response.json())
 	.then(response => {
@@ -41,6 +42,7 @@ fetch(`https://pexelsdimasv1.p.rapidapi.com/v1/search?query=${query}&locale=en-U
     else{
       setImages(response.photos)
     }
+    setLoading(false)
     
   })
 	.catch(err => console.error(err));
