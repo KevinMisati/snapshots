@@ -12,8 +12,9 @@ const DisplayImages = ({query,imgs,isLoading}) => {
                 {imgs.map((image) => {
                     return <SingleImage image={image.src.large} />
                 }) } 
-                 
+                
             </div>
+            
         </div>
     )
 }

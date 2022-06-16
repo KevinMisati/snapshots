@@ -14,32 +14,8 @@ function App () {
   const getCategoryQuery = (categoryQuery) => {
     setQuery(categoryQuery)
   }
-  /* const fetchData = async () => {
-    setLoading(true)
-    const response = await fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=020fada4ee15a8b88e543fb1552ac0ac&tags=${query}&per_page=24&format=json&nojsoncallback=1`);
-    const responseData = await response.json();
+  
 
-    setImages(responseData.photos.photo)
-    setLoading(false)
-  } 
-
-  useEffect(() => {
-    fetchData()
-  }, [query]) */
-
-/* const client = createClient('563492ad6f917000010000019674aa0fd7744dc4ab17a2cf568a1d16');
-const quer = 'Nature';
-
-useEffect(() => {
-  console.log("hello")
-  client.photos.search({ quer, per_page: 1 }).then(photos => {
-  setImages(photos.photos.small)
-  console.log(photos.photos.small)
-})
-.catch(error => console.log(error))
-},[])
-
- */
 const page = 1
 const perPage = 32
 
@@ -61,7 +37,7 @@ fetch(`https://pexelsdimasv1.p.rapidapi.com/v1/search?query=${query}&locale=en-U
     setImages(response.photos)
   })
 	.catch(err => console.error(err));
-},[query])
+},[query]) 
 
   
   return (
@@ -71,7 +47,11 @@ fetch(`https://pexelsdimasv1.p.rapidapi.com/v1/search?query=${query}&locale=en-U
       <SnapForm getCategoryQuery={getCategoryQuery} />
       <Categories getCategoryQuery={getCategoryQuery} />
       <DispalyImages isLoading={loading} query={query} imgs={images}   />
-     
+      <div className='top'>
+        <a href="#top">
+            <i class="fa-solid fa-angle-up fa-lg"></i>
+        </a>
+            </div>
     </div>
   );
 }

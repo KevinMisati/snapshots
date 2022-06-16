@@ -8,8 +8,9 @@
   --clr-light:#232323;
   --clr-accent:#000;
 }
-body {
+html,body {
   margin: 0;
+  scroll-behavior: smooth;
 
 }
 *{
