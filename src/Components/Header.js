@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <div id="top" className={classes.header}>
             <p className={classes["built-by"]}>
-                <a href="kevinmisati.netlify.app">Kevin</a>
+                <a href="https://kevinmisati.netlify.app/">Kevin</a>
             </p>
             <h1>SnapPhotos</h1>
         </div>

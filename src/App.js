@@ -23,11 +23,14 @@ function App () {
   }
 const perPage = 32
 
+const pexelsKey = process.env.REACT_APP_PEXELS_KEY
+const rapidKey = process.env.REACT_APP_RAPID_KEY
+
 const options = {
 	method: 'GET',
 	headers: {
-		Authorization: '563492ad6f917000010000019674aa0fd7744dc4ab17a2cf568a1d16',
-		'X-RapidAPI-Key': '1dd4d52b8fmsh21ff7141d5a5affp19fc01jsn2865e02b10c4',
+		Authorization: pexelsKey,
+		'X-RapidAPI-Key': rapidKey,
 		'X-RapidAPI-Host': 'PexelsdimasV1.p.rapidapi.com'
 	}
 };

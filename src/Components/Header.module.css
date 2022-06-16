@@ -6,13 +6,13 @@
 }
 .built-by{
     position: absolute;
-    top: 8px;
+    top: 25px;
     right:2%;
     transform: rotate(45deg);
 }
 .built-by a{
     color:var(--clr-light);
-    font-size: .78rem;
+    font-size: 1rem;
     background-color: var(--clr-btn1);
     text-decoration: none;
 }
