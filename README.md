@@ -1,5 +1,7 @@
 # Snapshots
 
+![snapshot](https://user-images.githubusercontent.com/65482241/174969035-70b65a97-9eab-41fa-91a3-c97ceb89af61.png)
+
 This is a photography website where users can search for photos and have them displayed on the home page. 
 
 Check it live [here](https://photos01.netlify.app/)
