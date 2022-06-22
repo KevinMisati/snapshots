@@ -2,6 +2,8 @@
 
 This is a photography website where users can search for photos and have them displayed on the home page. 
 
+Check it live [here](https://photos01.netlify.app/)
+
 # Technologies Used
 React
 
