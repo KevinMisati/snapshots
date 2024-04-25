@@ -23,27 +23,25 @@ function App () {
   }
 const perPage = 32
 const pexelsKey = process.env.REACT_APP_PEXELS_KEY
-const rapidKey = process.env.REACT_APP_RAPID_KEY
+const rapidKey = "hXTXNv15wHUVVPqKkjVMhVCDqFgpGpqCErZoKKg8DydBVgQdN1QSUoff"
 
 const options = {
 	method: 'GET',
 	headers: {
-		Authorization:pexelsKey,
-		'X-RapidAPI-Key':rapidKey,
-		'X-RapidAPI-Host': 'PexelsdimasV1.p.rapidapi.com'
+		Authorization:"hXTXNv15wHUVVPqKkjVMhVCDqFgpGpqCErZoKKg8DydBVgQdN1QSUoff",
 	}
 };
 useEffect(() => {
   setLoading(true)
-fetch(`https://pexelsdimasv1.p.rapidapi.com/v1/search?query=${query}&locale=en-US&per_page=${perPage}&page=${page}`, options)
+  fetch(`https://api.pexels.com/v1/search?query=${query}&per_page=${perPage}&page=${page}`, options)
 	.then(response => response.json())
 	.then(response => {
-    //console.log(response.photos)
+    console.log(response.photos,"hello resp")
     if(page > 1){
       setImages((prev) => [...prev,...response.photos])
     }
     else{
-      setImages(response.photos)
+      response.photos && setImages(response.photos)
     }
     setLoading(false)
     
